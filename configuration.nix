@@ -86,6 +86,8 @@
       chromium
       kate
       neovim
+      vimPlugins.nvim-treesitter.withAllGrammars
+      vimPlugins.nvim-treesitter
       vscode
       tmux
       (pkgs.python3.withPackages (python-pkgs: [
@@ -179,7 +181,10 @@
       bind c new-window -c "#{pane_current_path}"
     '';
   };
-
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk
