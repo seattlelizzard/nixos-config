@@ -149,14 +149,6 @@
   programs.steam.enable = true;
   # programs.chromium.enable = true;
   # Allow unfree packages
-  programs.zsh = {
-  #... # Your zsh config
-  oh-my-zsh = {
-    enable = true;
-    plugins = [ "git" ];
-    theme = "robbyrussell";
-    };
-  };
 
   programs.bash = {
   interactiveShellInit = ''
