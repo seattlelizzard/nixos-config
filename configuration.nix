@@ -113,6 +113,7 @@
       go
       fpp
       htop
+      btop
       zsh
       fish
       fishPlugins.done
