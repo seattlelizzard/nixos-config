@@ -118,6 +118,7 @@
       btop
       zsh
       fish
+      #vesktop
       fishPlugins.done
       fishPlugins.fzf-fish
       fishPlugins.forgit
@@ -185,6 +186,8 @@
     enable = true;
     defaultEditor = true;
   };
+  
+
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk
@@ -208,6 +211,7 @@
     git
     tree
     nh
+    vesktop
   ];
   environment.variables.EDITOR = "neovim";
 
