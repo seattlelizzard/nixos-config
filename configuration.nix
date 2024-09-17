@@ -115,6 +115,7 @@
       go
       delve
       fpp
+      tree-sitter-grammars.tree-sitter-norg
       htop
       btop
       zsh
@@ -185,7 +186,7 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-  };
+ };
   
 
   fonts.packages = with pkgs; [
