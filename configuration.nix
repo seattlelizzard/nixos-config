@@ -55,12 +55,12 @@
   };
   
   # Enable Hyprland <
-  services.xserver.displayManager.gdm.wayland = true;  
+  #services.xserver.displayManager.gdm.wayland = true;  
 
-  programs.hyprland = {    
-    enable = true;    
-    xwayland.enable = true;    
-  };
+  #programs.hyprland = {    
+  #  enable = true;    
+  #  xwayland.enable = true;    
+  #};
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
