@@ -9,10 +9,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-  nixpkgs.overlays = [
-    # replace <kickstart-nix-nvim> with the name you chose
-    lizzvim.overlays.default
-  ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -94,11 +90,7 @@
     packages = with pkgs; [
       chromium
       kate
-      #neovim
       nvim-pkg
-      #vimPlugins.nvim-treesitter.withAllGrammars
-      #vimPlugins.nvim-treesitter
-      #vscode
       tmux
       (pkgs.python3.withPackages (python-pkgs: [
         python-pkgs.pandas
@@ -106,8 +98,7 @@
         #python-pkgs.fuckit
       ]))
       blender
-      steam	#  thunderbird
-      #neovim
+      steam
       libgccjit
       kitty
       ruff
@@ -222,6 +213,7 @@
     kitty
     git
     tree
+    weechat
     nh
     vesktop
   ];
