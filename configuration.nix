@@ -91,9 +91,11 @@
     packages = with pkgs; [
       chromium
       kate
-      neovim
-      vimPlugins.nvim-treesitter.withAllGrammars
-      vimPlugins.nvim-treesitter
+      #neovim
+      nvim-pkg
+      #vimPlugins.nvim-treesitter.withAllGrammars
+      #vimPlugins.nvim-treesitter
+      #vscode
       tmux
       (pkgs.python3.withPackages (python-pkgs: [
         python-pkgs.pandas
