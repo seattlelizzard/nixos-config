@@ -9,7 +9,10 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-
+  nixpkgs.overlays = [
+    # replace <kickstart-nix-nvim> with the name you chose
+    lizzvim.overlays.default
+  ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
