@@ -101,6 +101,7 @@
       steam
       libgccjit
       kitty
+      mermaid-cli
       ruff
       asciiquarium
       geant4
@@ -212,6 +213,7 @@
     wget
     kitty
     git
+    emacs
     tree
     weechat
     nh
