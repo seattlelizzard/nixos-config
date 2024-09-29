@@ -103,6 +103,7 @@
       kitty
       mermaid-cli
       ruff
+      isync
       notmuch
       asciiquarium
       geant4
