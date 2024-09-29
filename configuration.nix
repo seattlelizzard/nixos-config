@@ -90,6 +90,7 @@
     packages = with pkgs; [
       chromium
       kate
+      helix
       nvim-pkg
       tmux
       (pkgs.python3.withPackages (python-pkgs: [

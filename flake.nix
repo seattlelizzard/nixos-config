@@ -6,9 +6,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     #neovim.url = "github:neovim/neovim/master";
     lizzvim.url = "github:seattlelizzard/nix-vim/0.0.12";
+    helix.url = "github:helix-editor/helix/master";
+
   };
 
-  outputs = { self, nixpkgs, lizzvim, ... }@inputs: {
+  outputs = { self, nixpkgs, lizzvim, helix, ... }@inputs: {
     # Please replace my-nixos with your hostname
     nixosConfigurations.lizzardlix = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -20,6 +22,7 @@
         {
           nixpkgs.overlays = [
             lizzvim.overlays.default
+            helix.overlays.default
           ];
         }
       ];
