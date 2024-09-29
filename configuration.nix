@@ -103,6 +103,7 @@
       kitty
       mermaid-cli
       ruff
+      notmuch
       asciiquarium
       geant4
       pyright
