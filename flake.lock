@@ -196,6 +196,27 @@
         "type": "github"
       }
     },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1726989464,
+        "narHash": "sha256-Vl+WVTJwutXkimwGprnEtXc/s/s8sMuXzqXaspIGlwM=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "2f23fa308a7c067e52dfcc30a0758f47043ec176",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-24.05",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "lizzvim": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -204,16 +225,16 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1726703444,
-        "narHash": "sha256-XusKRbUhZMpkWTxE4qs9IvazFrSxtzXKq7UFRCzXpKM=",
+        "lastModified": 1727626730,
+        "narHash": "sha256-+sOruGeEmVqx8VVCeq0dFl4Mwgu06mas3y1kanhXqxg=",
         "owner": "seattlelizzard",
         "repo": "nix-vim",
-        "rev": "0503afb3c8d8fc37bc89ef5a29b1f8d8c6be4fd2",
+        "rev": "c25466833d3dd044d9451dafa9944d0330cc2668",
         "type": "github"
       },
       "original": {
         "owner": "seattlelizzard",
-        "ref": "0.0.12",
+        "ref": "0.0.13",
         "repo": "nix-vim",
         "type": "github"
       }
@@ -441,6 +462,7 @@
     "root": {
       "inputs": {
         "helix": "helix",
+        "home-manager": "home-manager",
         "lizzvim": "lizzvim",
         "nixpkgs": "nixpkgs_7"
       }

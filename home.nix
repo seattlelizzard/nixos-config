@@ -166,22 +166,24 @@
   };
 
 
-  programs.bash = {
-  interactiveShellInit = ''
-    if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-    then
-      shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-      exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-    fi
-  ''
-  ;};
+
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greetinads
+    '';
+    plugins = [
+      # Enable a plugin (here grc for colorized command output) from nixpkgs
+      { name = "grc"; src = pkgs.fishPlugins.grc.src; }
+      # Manually packaging and enable a plugins
+    ];
+  };
   
-  programs.neovim = {
+  programs.neovim.finalPackage = {
     enable = true;
     defaultEditor = true;
   };
   
-  programs.steam.enable = true;
 
   programs.tmux = {
   enable = true;
