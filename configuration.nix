@@ -87,64 +87,7 @@
     isNormalUser = true;
     description = "lizz";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      chromium
-      kate
-      helix
-      nvim-pkg
-      tmux
-      (pkgs.python3.withPackages (python-pkgs: [
-        python-pkgs.pandas
-        python-pkgs.pynvim
-        #python-pkgs.fuckit
-      ]))
-      blender
-      steam
-      libgccjit
-      kitty
-      mermaid-cli
-      ruff
-      isync
-      notmuch
-      asciiquarium
-      geant4
-      pyright
-      neofetch
-      discord
-      yazi
-      thefuck
-      oh-my-fish
-      ripgrep
-      nodejs_22
-      yarn
-      go
-      delve
-      fpp
-      tree-sitter-grammars.tree-sitter-norg
-      htop
-      btop
-      zsh
-      fish
-      #vesktop
-      fishPlugins.done
-      fishPlugins.fzf-fish
-      fishPlugins.forgit
-      fishPlugins.hydro
-      lazygit
-      php
-      #php84Packages.cyclonedx-php-composer
-      cargo
-      #luarocks_bootstrap
-      zulu
-      luajit
-      lua-language-server
-      julia-lts
-      #python312Packages.venvShellHook
-      xclip
-      fd
-      fzf
-      #luajitPackages.jsregexp
-    ];
+    
   };
 
   # Enable automatic login for the user.
@@ -155,44 +98,10 @@
   #systemd.services."getty@tty1".enable = false;
   #systemd.services."autovt@tty1".enable = false;
   # Install firefox.
-  programs.firefox.enable = true;
-  programs.steam.enable = true;
   # programs.chromium.enable = true;
   # Allow unfree packages
 
-  programs.bash = {
-  interactiveShellInit = ''
-    if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-    then
-      shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-      exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-    fi
-  ''
-  ;};
 
-  programs.tmux = {
-  enable = true;
-  clock24 = true;
-  extraConfig = ''
-      # https://old.reddit.com/r/tmux/comments/mesrci/tmux_2_doesnt_seem_to_use_256_colors/
-      set -g default-terminal "xterm-256color"
-      set -ga terminal-overrides ",*256col*:Tc"
-      set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
-      set-environment -g COLORTERM "truecolor"
-
-      # Mouse works as expected
-      set-option -g mouse on
-      # easy-to-remember split pane commands
-      bind | split-window -h -c "#{pane_current_path}"
-      bind - split-window -v -c "#{pane_current_path}"
-      bind c new-window -c "#{pane_current_path}"
-    '';
-  };
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
- };
-  
 
   fonts.packages = with pkgs; [
     noto-fonts
@@ -216,13 +125,10 @@
     wget
     kitty
     git
-    emacs
     tree
-    weechat
-    nh
-    vesktop
+    nh #nix cli helper
   ];
-  environment.variables.EDITOR = "neovim";
+  environment.variables.EDITOR = "vim";
 
 
 

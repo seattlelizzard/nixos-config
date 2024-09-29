@@ -5,7 +5,7 @@
     # NixOS official package source, using the nixos-23.11 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     #neovim.url = "github:neovim/neovim/master";
-    lizzvim.url = "github:seattlelizzard/nix-vim/0.0.12";
+    lizzvim.url = "github:seattlelizzard/nix-vim/0.0.13";
     helix.url = "github:helix-editor/helix/master";
 
   };
@@ -19,6 +19,7 @@
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
         ./configuration.nix 
+        ./home.nix
         {
           nixpkgs.overlays = [
             lizzvim.overlays.default
